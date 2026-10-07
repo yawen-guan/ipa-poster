@@ -4,11 +4,11 @@
 :root {
   --paper: #fffdf9;
   --ink: #27313b;
-  --muted: #69727a;
+  --muted: #50585e;
   --line: #d9ddd9;
   --accent: #4c6672;
-  --panel: #faf9f5;
-  --english: #edf3f3;
+  --panel: #f2efe8;
+  --english: #dfeaea;
 }
 
 @font-face {
@@ -45,7 +45,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #5d686e;
+  color: #4b5358;
   font-size: 13px;
 }
 
@@ -97,10 +97,10 @@ h1 {
   font-weight: 400;
 }
 
-h1 span { color: #98a3a5; }
+h1 span { color: #6f797c; }
 
 .masthead-ipa {
-  color: #bec5c5;
+  color: #818b8d;
   font-size: 11mm;
   line-height: 1;
   letter-spacing: 1.2mm;
@@ -119,7 +119,7 @@ h1 span { color: #98a3a5; }
 .section-heading { margin-bottom: 3.5mm; }
 
 .section-number {
-  color: #9aa3a5;
+  color: #70787b;
   font-size: 3.4mm;
   font-weight: 700;
   letter-spacing: .3mm;
@@ -152,7 +152,7 @@ h2 {
   margin: 0 0 2.2mm;
   font-size: 6mm;
   line-height: 1;
-  color: #59656b;
+  color: #444c50;
   text-transform: uppercase;
   letter-spacing: .45mm;
 }
@@ -164,7 +164,7 @@ h2 {
 }
 
 .sound-panel h3 small {
-  color: #8a9296;
+  color: #626a6e;
   font-size: 2.7mm;
   font-weight: 400;
   letter-spacing: .15mm;
@@ -203,7 +203,7 @@ h2 {
   font-weight: bold;
   line-height: 1;
   letter-spacing: -.25mm;
-  color: var(--ink);
+  color: #000000;
   text-align: center;
 }
 
@@ -225,15 +225,15 @@ h2 {
   align-items: baseline;
   text-align: center;
   gap: .45mm;
-  color: #39444c;
+  color: #000000;
   font-size: 8mm;
   line-height: 1.22;
   white-space: nowrap;
 }
 
 .examples span { overflow: hidden; }
-.examples b { color: #384f5b; font-weight: 700; }
-.examples i { color: #778086; font-style: normal; }
+.examples b { color: #000000; font-weight: 700; }
+.examples i { color: #555d63; font-style: normal; }
 
 .panel-note {
   margin: 2mm .5mm -.2mm;
@@ -255,23 +255,23 @@ h2 {
 /* .french-consonants .symbol { font-size: 15mm; } */
 .french-consonants .examples { font-size: 6mm; gap: .35mm; }
 
-.tone-sky    { background: #edf5f8; border-color: #d6e6ec; }
-.tone-rose   { background: #f8eeee; border-color: #ead9d9; }
-.tone-gold   { background: #f8f3e7; border-color: #e9dfc8; }
-.tone-mint   { background: #edf5ef; border-color: #d7e6da; }
-.tone-lilac  { background: #f2eff7; border-color: #dfd9ea; }
-.tone-peach  { background: #fbf0e9; border-color: #eddcd1; }
-.tone-blue   { background: #edf3f7; border-color: #d4e0e7; }
-.tone-green  { background: #eef5f1; border-color: #d8e6dd; }
-.tone-stone  { background: #f0f1f0; border-color: #dcdfdd; }
-.tone-sand   { background: #f7f2e9; border-color: #e8dfcf; }
-.tone-pink   { background: #f7eded; border-color: #e9d8d8; }
-.tone-aqua   { background: #eaf4f3; border-color: #d1e4e2; }
-.tone-violet { background: #f1eef6; border-color: #ded8e8; }
-.tone-amber  { background: #f8f0e4; border-color: #eadbc7; }
-.tone-coral  { background: #f8ece8; border-color: #ead6d0; }
-.tone-sage   { background: #edf3eb; border-color: #d8e3d5; }
-.tone-grey   { background: #eff2f2; border-color: #d9dede; }
+.tone-sky    { background: #dcecf2; border-color: #c3dae3; }
+.tone-rose   { background: #f2dddd; border-color: #dfc2c2; }
+.tone-gold   { background: #f1e6c9; border-color: #decfae; }
+.tone-mint   { background: #dcebdd; border-color: #c3d9c6; }
+.tone-lilac  { background: #e5def0; border-color: #cfc3df; }
+.tone-peach  { background: #f4dfd1; border-color: #e3c7b8; }
+.tone-blue   { background: #dae7ef; border-color: #c1d4df; }
+.tone-green  { background: #dbe9de; border-color: #c2d8c7; }
+.tone-stone  { background: #e3e6e4; border-color: #cdd2cf; }
+.tone-sand   { background: #ede2cf; border-color: #d9c9ad; }
+.tone-pink   { background: #f0dada; border-color: #ddc0c0; }
+.tone-aqua   { background: #d5e8e6; border-color: #bad5d2; }
+.tone-violet { background: #e3dced; border-color: #cbc0dc; }
+.tone-amber  { background: #efdfc5; border-color: #dcc5a4; }
+.tone-coral  { background: #f0d8d0; border-color: #ddbbb2; }
+.tone-sage   { background: #dbe7d7; border-color: #c2d5bd; }
+.tone-grey   { background: #e0e6e6; border-color: #c8d2d2; }
 
 .map-section {
   position: relative;
@@ -324,7 +324,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.row-label-muted { color: #7c8589; }
+.row-label-muted { color: #5d6569; }
 .seven-columns { grid-template-columns: repeat(7, minmax(0, 1fr)); }
 .nine-columns { grid-template-columns: repeat(9, 1fr); }
 
