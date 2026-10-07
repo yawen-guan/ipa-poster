@@ -1,6 +1,6 @@
 # French
 
-## 12 vowels
+## 12 oral vowels
 
 /i/: sour**i**s /suʀi/, sk**i** /ski/
 
