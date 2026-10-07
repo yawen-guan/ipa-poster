@@ -1,0 +1,108 @@
+% Compile with: xelatex french-english-vowels.tex
+% Alternatively: lualatex french-english-vowels.tex (full LuaLaTeX install).
+% Unicode IPA glyphs are supplied by DejaVu Sans (free and widely available).
+% This is a subset of the standard IPA vowel-symbol chart, not a plot of
+% measured French/English vowel realizations. Positions are the IPA reference
+% positions; broad transcription does not specify exact accent-specific quality.
+% Scope: common French and traditional British/General American English
+% transcription symbols. French /ɑ/ and /œ̃/ are retained for accents with
+% those distinctions. Length and English diphthongs are not plotted.
+% Reference: https://www.internationalphoneticassociation.org/content/ipa-vowels
+% French: Fougeron & Smith (1993), Illustrations of the IPA: French.
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{fontspec}
+\setsansfont{DejaVu Sans}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\definecolor{ipablue}{HTML}{2D63C8}
+\definecolor{ipagreen}{HTML}{036264}
+\definecolor{ipared}{HTML}{9e0808}
+\definecolor{ipapurple}{HTML}{51089e}
+\definecolor{guidegray}{HTML}{7C8795}
+\definecolor{labelgray}{HTML}{354052}
+
+% Place an IPA pair around a reference point. Either symbol may be empty.
+% Left = unrounded; right = rounded, including singleton cardinal vowels.
+% \newcommand{\vowelpair}[4]{%
+%   \node[point] at (#1,#2) {};
+%   \if\relax\detokenize{#3}\relax\else
+%     \node[vowel,anchor=east] at (#1-0.13,#2) {#3};
+%   \fi
+%   \if\relax\detokenize{#4}\relax\else
+%     \node[vowel,anchor=west] at (#1+0.13,#2) {#4};
+%   \fi
+% }
+
+\newcommand{\vowelpair}[6]{%
+  \begingroup
+  \def\firststyle{vowel}%
+  \def\secondstyle{vowel}%
+  \if\relax\detokenize{#3}\relax\else
+    \edef\firststyle{#3-vowel}%
+  \fi
+  \if\relax\detokenize{#5}\relax\else
+    \edef\secondstyle{#5-vowel}%
+  \fi
+  \node[point] at (#1,#2) {};
+  \if\relax\detokenize{#4}\relax\else
+    \node[\firststyle,anchor=east] at (#1-0.13,#2) {#4};
+  \fi
+  \if\relax\detokenize{#6}\relax\else
+    \node[\secondstyle,anchor=west] at (#1+0.13,#2) {#6};
+  \fi
+  \endgroup
+}
+
+\begin{document}
+\begin{tikzpicture}[
+  x=1cm,y=0.82cm,
+  fr-vowel/.style={font=\fontsize{25}{29}\selectfont,text=ipablue,
+                fill=white,inner sep=2pt},
+  en-vowel/.style={font=\fontsize{25}{29}\selectfont,text=ipared,
+                fill=white,inner sep=2pt},
+  vowel/.style={font=\fontsize{25}{29}\selectfont,text=ipapurple,
+                fill=white,inner sep=2pt},
+  point/.style={circle,fill=black,draw=white,line width=2pt,
+                minimum size=7pt,inner sep=0pt},
+  heading/.style={font=\large\bfseries,text=labelgray},
+  rowlabel/.style={font=\normalsize,text=labelgray,anchor=east},
+  note/.style={font=\footnotesize,text=labelgray,anchor=west},
+  guide/.style={draw=guidegray,line width=0.8pt}
+]
+  % Standard vowel trapezium: front, central and back reference lines.
+  \draw[guide] (0,6) -- (7.2,6) -- (7.2,0) -- (3.2,0) -- cycle;
+  \draw[guide] (3.6,6) -- (5.2,0);
+  \draw[guide] (1.0667,4) -- (7.2,4);
+  \draw[guide] (2.1333,2) -- (7.2,2);
+
+  \node[heading] at (0.35,6.85) {Front};
+  \node[heading] at (3.6,6.85) {Central};
+  \node[heading] at (7.2,6.85) {Back};
+  \foreach \y/\name in {
+    6/Close,5/Near-close,4/Close-mid,3/Mid,
+    2/Open-mid,1/Near-open,0/Open}
+    \node[rowlabel] at (-0.85,\y) {\name};
+
+  \vowelpair{0}{6}{}{i}{fr}{y}
+  \vowelpair{7.2}{6}{}{}{}{u}
+  \vowelpair{1.65}{5}{en}{ɪ}{}{}
+  \vowelpair{6.05}{5}{}{}{en}{ʊ}
+  \vowelpair{1.0667}{4}{fr}{e}{fr}{ø}
+  \vowelpair{7.2}{4}{}{}{fr}{o};
+  \node[vowel] at (4.4,3) {ə};
+  \vowelpair{2.1333}{2}{}{ɛ}{fr}{œ}
+  \vowelpair{7.2}{2}{en}{ʌ}{}{ɔ}
+  \vowelpair{2.6667}{1}{en}{æ}{}{};
+  \vowelpair{3.2}{0}{fr}{a}{}{};
+  \vowelpair{7.2}{0}{}{ɑ}{en}{ɒ}
+
+  \node[note] at (-2.8,-0.9)
+  {At each point: left = unrounded; right = rounded.};
+  \node[note] at (-2.8, -1.45)
+  {Color: {\color{ipablue}French}, {\color{ipared}{English}}, {\color{ipapurple}both} };
+  % \node[note] at (-2.8,-2)
+  %   {American English r-coloured vowels: {\color{ipablue}ɚ\quad ɝ}.};
+  % \node[note] at (-2.8,-2.55)
+  %   {IPA reference positions. Inventories vary by accent; length and diphthongs omitted.};
+\end{tikzpicture}
+\end{document}

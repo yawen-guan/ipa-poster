@@ -1,0 +1,499 @@
+/* A1 portrait poster. Edit the palette in :root and the layout below. */
+
+* {
+  box-sizing: border-box
+}
+
+:root {
+  --ink: #3e3547;
+  --muted: #766f7d;
+  --purple: #786589;
+  --line: #ded7e5;
+  --wash: #f3eff6;
+  --paper: #fffefd
+}
+
+@font-face {
+  font-family: PosterSans;
+  src: url(assets/fonts/DejaVuSans-Regular.woff);
+  font-weight: 400;
+  font-display: swap
+}
+
+@font-face {
+  font-family: PosterSans;
+  src: url(assets/fonts/DejaVuSans-Bold.woff);
+  font-weight: 700;
+  font-display: swap
+}
+
+html,body {
+  margin: 0;
+  background: #e9e5ed;
+  color: var(--ink);
+  font-family: PosterSans,sans-serif
+}
+
+.toolbar {
+  max-width: 1130px;
+  margin: 18px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 13px;
+  color: #665c70;
+  gap: 12px
+}
+
+.toolbar button {
+  font: inherit;
+  background: #786589;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 16px;
+  cursor: pointer
+}
+
+.viewport {
+  margin: auto;
+  overflow: visible
+}
+
+.poster {
+  width: 594mm;
+  height: 841mm;
+  padding: 17mm 18mm 15mm;
+  background: var(--paper);
+  transform-origin: top left;
+  display: grid;
+  grid-template-rows: 61mm 181mm 1fr 17mm;
+  gap: 9mm;
+  box-shadow: 0 8px 40px #43314d18
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: .45mm solid var(--line);
+  padding-bottom: 7mm
+}
+
+.eyebrow {
+  font-size: 3.6mm;
+  letter-spacing: .8mm;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 5mm
+}
+
+h1 {
+  font-size: 17.4mm;
+  letter-spacing: -.6mm;
+  font-weight: 400;
+  line-height: 1.13;
+  margin: 0 0 3.5mm
+}
+
+.subtitle {
+  font-size: 4.7mm;
+  color: var(--muted)
+}
+
+.masthead-right {
+  text-align: right;
+  align-self: center;
+  min-width: 96mm
+}
+
+.masthead-right .ipa-hero {
+  font-size: 18mm;
+  color: #b4a6c0;
+  letter-spacing: 1mm
+}
+
+.masthead-right .tiny {
+  font-size: 3.6mm;
+  letter-spacing: .6mm;
+  text-transform: uppercase;
+  margin-top: 4mm;
+  color: var(--muted)
+}
+
+.map-panel {
+  display: grid;
+  grid-template-columns: 342mm 1fr;
+  border: .35mm solid var(--line);
+  border-radius: 4mm;
+  overflow: hidden
+}
+
+.map-main {
+  padding: 8mm 9mm 5mm
+}
+
+.component-heading {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  margin-bottom: 3mm
+}
+
+.index {
+  font-size: 3.5mm;
+  font-weight: 700;
+  color: var(--purple);
+  letter-spacing: .4mm
+}
+
+h2 {
+  font-size: 8.3mm;
+  letter-spacing: -.2mm;
+  font-weight: 400;
+  margin: 0
+}
+
+.map-main h2 {
+  font-size: 7mm
+}
+
+.map-sub {
+  font-size: 3.8mm;
+  color: var(--muted);
+  margin: 0 0 2mm
+}
+
+.vowel-map {
+  object-fit: contain;
+  width: 100%;
+  height: 145mm;
+  display: block
+}
+
+.map-guide {
+  background: var(--wash);
+  padding: 10mm 9mm;
+  border-left: .35mm solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.map-guide h3 {
+  font-size: 5.3mm;
+  font-weight: 700;
+  margin: 0 0 3mm
+}
+
+.guide-row {
+  font-size: 4.4mm;
+  line-height: 1.5;
+  margin: 3mm 0
+}
+
+.guide-row b {
+  font-weight: 700
+}
+
+.reference-note {
+  font-size: 3.65mm;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-top: 4mm
+}
+
+.lip-tip {
+  border-top: .35mm solid #d8cfe0;
+  padding-top: 5mm
+}
+
+.lip-pairs {
+  font-size: 7.6mm;
+  color: var(--purple);
+  margin-top: 3mm;
+  word-spacing: 1mm;
+  white-space: nowrap
+}
+
+.lip-tip p {
+  font-size: 3.9mm;
+  line-height: 1.45;
+  margin: 3mm 0 0
+}
+
+.languages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9mm;
+  min-height: 0
+}
+
+.language {
+  border: .35mm solid var(--line);
+  border-radius: 4mm;
+  padding: 8mm 9mm;
+  display: flex;
+  flex-direction: column;
+  min-width: 0
+}
+
+.language-header {
+  margin-bottom: 4mm
+}
+
+.language-header .component-heading {
+  justify-content: space-between
+}
+
+.language-header p {
+  font-size: 3.65mm;
+  margin: 2mm 0 0;
+  color: var(--muted);
+  line-height: 1.45
+}
+
+.label-tag {
+  font-size: 3.4mm;
+  color: var(--purple);
+  border: 1px solid var(--line);
+  border-radius: 10mm;
+  padding: 1.6mm 3.5mm
+}
+
+.sound-group {
+  margin-top: 4mm
+}
+
+.group-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: .3mm solid var(--line);
+  padding-bottom: 2.8mm;
+  margin-bottom: 1mm;
+  gap: 2mm
+}
+
+.group-heading h3 {
+  font-size: 5.2mm;
+  margin: 0;
+  font-weight: 700
+}
+
+.group-heading span {
+  font-size: 3.5mm;
+  color: var(--muted);
+  text-align: right
+}
+
+.sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6mm
+}
+
+.sound {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  border-bottom: .2mm solid #eeeaf1;
+  min-height: 17.5mm;
+  padding: 1.4mm 0
+}
+
+.symbol {
+  font-size: 10.2mm;
+  color: var(--purple);
+  width: 19mm;
+  flex: none;
+  line-height: 1.1;
+  letter-spacing: -.4mm
+}
+
+.symbol sup {
+  font-size: 3.5mm;
+  vertical-align: super
+}
+
+.words {
+  font-size: 5.25mm;
+  line-height: 1.35;
+  white-space: nowrap
+}
+
+.words b {
+  color: #69527e;
+  font-weight: 700
+}
+
+.transcription {
+  font-size: 3.9mm;
+  line-height: 1.5;
+  color: #83798b;
+  white-space: nowrap
+}
+
+.example {
+  min-width: 0
+}
+
+.english .sound {
+  min-height: 13.8mm
+}
+
+.english .symbol {
+  font-size: 9.1mm;
+  width: 22mm
+}
+
+.english .words {
+  font-size: 5.1mm
+}
+
+.english .sound-group {
+  margin-top: 4.5mm
+}
+
+.english .micro-tag {
+  display: block;
+  font-size: 2.8mm;
+  color: var(--muted);
+  margin-top: 1mm
+}
+
+.glides .sounds {
+  grid-template-columns: 1fr
+}
+
+.glides .sound {
+  min-height: 14mm
+}
+
+.glides .symbol {
+  width: 19mm
+}
+
+.glides .example {
+  display: flex;
+  gap: 3mm;
+  align-items: baseline
+}
+
+.glides .transcription {
+  font-size: 3.9mm
+}
+
+.glides .words {
+  font-size: 4.9mm
+}
+
+.note-box {
+  background: var(--wash);
+  border-radius: 2.5mm;
+  padding: 4mm 4.5mm;
+  font-size: 4mm;
+  line-height: 1.5;
+  margin-top: 4mm
+}
+
+.note-box p {
+  margin: 0
+}
+
+.note-box p+p {
+  margin-top: 2mm
+}
+
+.note-box b {
+  color: #665375
+}
+
+.mini-ipa {
+  color: var(--purple);
+  font-size: 4.5mm;
+  white-space: nowrap
+}
+
+.fr-bottom,.en-bottom {
+  margin-top: auto;
+  padding-top: 3mm
+}
+
+.fr-bottom .note-box,.en-bottom .note-box {
+  margin-top: 0
+}
+
+.fine-note {
+  font-size: 3.85mm;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 3mm 0 0
+}
+
+.english .r-vowels .symbol {
+  font-size: 8mm
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 8mm;
+  align-items: center;
+  border-top: .35mm solid var(--line);
+  padding-top: 4mm;
+  font-size: 3mm;
+  line-height: 1.45;
+  color: var(--muted)
+}
+
+.foot a {
+  color: inherit;
+  text-decoration: none
+}
+
+.foot .credit {
+  max-width: 390mm
+}
+
+.foot .format {
+  text-align: right;
+  white-space: nowrap;
+  font-size: 3.2mm;
+  letter-spacing: .3mm
+}
+
+@page {
+  size: 594mm 841mm;
+  margin: 0
+}
+
+@media print {
+  html,body {
+    background: white;
+    width: 594mm;
+    height: 841mm
+  }
+  .toolbar {
+    display: none
+  }
+  .viewport {
+    width: 594mm!important;
+    height: 841mm!important;
+    margin: 0
+  }
+  .poster {
+    transform: none!important;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    break-inside: avoid
+  }
+  .poster * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact
+  }
+}
+
